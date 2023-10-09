@@ -12,7 +12,6 @@ class Validator
      */
     public static function isSigValid(array $requestData): bool
     {
-        return true;
         $sig = self::createSig($requestData);
         return mb_strtolower(md5($sig)) === $requestData['sig'];
     }
